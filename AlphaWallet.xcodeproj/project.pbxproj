@@ -59,6 +59,15 @@
 		02FB110029FA0585006538DC /* RPCServerComparableTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FB10FF29FA0585006538DC /* RPCServerComparableTest.swift */; };
 		02FEA8EF280FE1B7006C3CA9 /* NSLayoutConstraintExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FEA8EE280FE1B7006C3CA9 /* NSLayoutConstraintExtension.swift */; };
 		0DF46B4002E13613F768E7AE /* Pods_AlphaWalletTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E36AB2DC7832A980726A4AB1 /* Pods_AlphaWalletTests.framework */; };
+		13D7646C2B64363E00A0CB4C /* AddTokenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D7645C2B64363D00A0CB4C /* AddTokenViewModel.swift */; };
+		13D7646D2B64363E00A0CB4C /* UIView + extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D7645E2B64363D00A0CB4C /* UIView + extension.swift */; };
+		13D7646E2B64363E00A0CB4C /* AddTokenViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D764602B64363D00A0CB4C /* AddTokenViewCoordinator.swift */; };
+		13D7646F2B64363E00A0CB4C /* TokenListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D764622B64363D00A0CB4C /* TokenListModel.swift */; };
+		13D764702B64363E00A0CB4C /* AddTokenListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D764642B64363D00A0CB4C /* AddTokenListView.swift */; };
+		13D764712B64363E00A0CB4C /* AddTokenNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D764652B64363D00A0CB4C /* AddTokenNavigationBar.swift */; };
+		13D764722B64363E00A0CB4C /* AddTokenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D764672B64363D00A0CB4C /* AddTokenTableViewCell.swift */; };
+		13D764732B64363E00A0CB4C /* AddTokenNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D764692B64363D00A0CB4C /* AddTokenNetworkService.swift */; };
+		13D764742B64363E00A0CB4C /* AddTokenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D7646B2B64363D00A0CB4C /* AddTokenViewController.swift */; };
 		290B2B541F8F50030053C83E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 290B2B561F8F50030053C83E /* Localizable.strings */; };
 		290B2B5F1F9177860053C83E /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290B2B5E1F9177860053C83E /* UIImage.swift */; };
 		290B2B611F9179880053C83E /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290B2B601F9179880053C83E /* AccountViewModel.swift */; };
@@ -987,6 +996,15 @@
 		0B5A03D1E5E417FE79607D0F /* Pods_AlphaWallet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlphaWallet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		11EA2601C4D0D445D99E4B33 /* Pods_AlphaWalletShare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlphaWalletShare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		120A2B8C48180E93DBCCC2EE /* Pods-AlphaWalletUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlphaWalletUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AlphaWalletUITests/Pods-AlphaWalletUITests.release.xcconfig"; sourceTree = "<group>"; };
+		13D7645C2B64363D00A0CB4C /* AddTokenViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTokenViewModel.swift; sourceTree = "<group>"; };
+		13D7645E2B64363D00A0CB4C /* UIView + extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView + extension.swift"; sourceTree = "<group>"; };
+		13D764602B64363D00A0CB4C /* AddTokenViewCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTokenViewCoordinator.swift; sourceTree = "<group>"; };
+		13D764622B64363D00A0CB4C /* TokenListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenListModel.swift; sourceTree = "<group>"; };
+		13D764642B64363D00A0CB4C /* AddTokenListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTokenListView.swift; sourceTree = "<group>"; };
+		13D764652B64363D00A0CB4C /* AddTokenNavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTokenNavigationBar.swift; sourceTree = "<group>"; };
+		13D764672B64363D00A0CB4C /* AddTokenTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTokenTableViewCell.swift; sourceTree = "<group>"; };
+		13D764692B64363D00A0CB4C /* AddTokenNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTokenNetworkService.swift; sourceTree = "<group>"; };
+		13D7646B2B64363D00A0CB4C /* AddTokenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTokenViewController.swift; sourceTree = "<group>"; };
 		290B2B551F8F50030053C83E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		290B2B5E1F9177860053C83E /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		290B2B601F9179880053C83E /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
@@ -1962,6 +1980,86 @@
 			path = Features;
 			sourceTree = "<group>";
 		};
+		13D7645A2B64363D00A0CB4C /* AddToken */ = {
+			isa = PBXGroup;
+			children = (
+				13D7645B2B64363D00A0CB4C /* ViewModel */,
+				13D7645D2B64363D00A0CB4C /* Uikit */,
+				13D7645F2B64363D00A0CB4C /* ViewCoordinator */,
+				13D764612B64363D00A0CB4C /* Model */,
+				13D764632B64363D00A0CB4C /* View */,
+				13D764682B64363D00A0CB4C /* Service */,
+				13D7646A2B64363D00A0CB4C /* ViewController */,
+			);
+			path = AddToken;
+			sourceTree = "<group>";
+		};
+		13D7645B2B64363D00A0CB4C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				13D7645C2B64363D00A0CB4C /* AddTokenViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		13D7645D2B64363D00A0CB4C /* Uikit */ = {
+			isa = PBXGroup;
+			children = (
+				13D7645E2B64363D00A0CB4C /* UIView + extension.swift */,
+			);
+			path = Uikit;
+			sourceTree = "<group>";
+		};
+		13D7645F2B64363D00A0CB4C /* ViewCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				13D764602B64363D00A0CB4C /* AddTokenViewCoordinator.swift */,
+			);
+			path = ViewCoordinator;
+			sourceTree = "<group>";
+		};
+		13D764612B64363D00A0CB4C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				13D764622B64363D00A0CB4C /* TokenListModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		13D764632B64363D00A0CB4C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				13D764642B64363D00A0CB4C /* AddTokenListView.swift */,
+				13D764652B64363D00A0CB4C /* AddTokenNavigationBar.swift */,
+				13D764662B64363D00A0CB4C /* TableViewCell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		13D764662B64363D00A0CB4C /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				13D764672B64363D00A0CB4C /* AddTokenTableViewCell.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		13D764682B64363D00A0CB4C /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				13D764692B64363D00A0CB4C /* AddTokenNetworkService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		13D7646A2B64363D00A0CB4C /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				13D7646B2B64363D00A0CB4C /* AddTokenViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		290B2B511F8F4F840053C83E /* Localization */ = {
 			isa = PBXGroup;
 			children = (
@@ -2014,6 +2112,7 @@
 		2912CCF71F6A830700C6CBE3 /* AlphaWallet */ = {
 			isa = PBXGroup;
 			children = (
+				13D7645A2B64363D00A0CB4C /* AddToken */,
 				875CA8D328BDE42A0020FA48 /* Common */,
 				87B1ACDE28C0D6660072A5E2 /* Resources */,
 				87D7D66327D7667500202861 /* WalletPupup */,
@@ -5012,10 +5111,12 @@
 				"${BUILT_PRODUCTS_DIR}/EthereumABI/EthereumABI.framework",
 				"${BUILT_PRODUCTS_DIR}/EthereumAddress/EthereumAddress.framework",
 				"${BUILT_PRODUCTS_DIR}/FirebaseCore/FirebaseCore.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseCoreExtension/FirebaseCoreExtension.framework",
 				"${BUILT_PRODUCTS_DIR}/FirebaseCoreInternal/FirebaseCoreInternal.framework",
 				"${BUILT_PRODUCTS_DIR}/FirebaseCrashlytics/FirebaseCrashlytics.framework",
 				"${BUILT_PRODUCTS_DIR}/FirebaseInstallations/FirebaseInstallations.framework",
 				"${BUILT_PRODUCTS_DIR}/FirebaseMessaging/FirebaseMessaging.framework",
+				"${BUILT_PRODUCTS_DIR}/FirebaseSessions/FirebaseSessions.framework",
 				"${BUILT_PRODUCTS_DIR}/FloatingPanel/FloatingPanel.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleDataTransport/GoogleDataTransport.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
@@ -5030,12 +5131,15 @@
 				"${BUILT_PRODUCTS_DIR}/PaperTrailLumberjack/PaperTrailLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
+				"${BUILT_PRODUCTS_DIR}/PromisesSwift/Promises.framework",
 				"${BUILT_PRODUCTS_DIR}/QRCodeReaderViewController/QRCodeReaderViewController.framework",
-				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
+				"${BUILT_PRODUCTS_DIR}/R.swift/RswiftResources.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/SAMKeychain/SAMKeychain.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImageSVGCoder/SDWebImageSVGCoder.framework",
 				"${BUILT_PRODUCTS_DIR}/SipHash/SipHash.framework",
 				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
 				"${BUILT_PRODUCTS_DIR}/StatefulViewController/StatefulViewController.framework",
@@ -5082,10 +5186,12 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EthereumABI.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EthereumAddress.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCore.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCoreExtension.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCoreInternal.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCrashlytics.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstallations.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseMessaging.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseSessions.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FloatingPanel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleDataTransport.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
@@ -5100,12 +5206,15 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PaperTrailLumberjack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Promises.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/QRCodeReaderViewController.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RswiftResources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SAMKeychain.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImageSVGCoder.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SipHash.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/StatefulViewController.framework",
@@ -5281,6 +5390,7 @@
 				295A59381F71C1B90092F0FC /* AccountsCoordinator.swift in Sources */,
 				87F15AF727F1EB7D00EB9787 /* SwapStepView.swift in Sources */,
 				879F185E26E74512000602F2 /* ButtonsBarBackgroundView.swift in Sources */,
+				13D764732B64363E00A0CB4C /* AddTokenNetworkService.swift in Sources */,
 				874ED69727DF3685001AB374 /* SlippageView.swift in Sources */,
 				8719395629E03A4B000D377C /* EditLegacyGasPriceView.swift in Sources */,
 				87BBF9962563DD7600FF4846 /* SignMessageCoordinatorBridgeToPromise.swift in Sources */,
@@ -5357,6 +5467,7 @@
 				87F15AED27F1EA6900EB9787 /* SwapQuoteDetailsViewModel.swift in Sources */,
 				8793A4A2291A5DA100BCF849 /* CurrencyTableViewCell.swift in Sources */,
 				8736214E264D3B0000AAF794 /* BalloonMarker.swift in Sources */,
+				13D764722B64363E00A0CB4C /* AddTokenTableViewCell.swift in Sources */,
 				87E2555024F52E3600F025F7 /* SlidableTextField.swift in Sources */,
 				02A96DFD29DB0B34002616A1 /* SpamTokenService.swift in Sources */,
 				29C0FCE1200DA94A004A13CB /* SignMessageCoordinator.swift in Sources */,
@@ -5416,6 +5527,7 @@
 				293112101FC4ADCB00966EEA /* ActiveWalletViewModel.swift in Sources */,
 				875CA8F928BE403A0020FA48 /* RPCServer+Extensions.swift in Sources */,
 				87BBF9972563DD7600FF4846 /* TransactionInProgressCoordinatorBridgeToPromise.swift in Sources */,
+				13D7646E2B64363E00A0CB4C /* AddTokenViewCoordinator.swift in Sources */,
 				872A987128645EF100196EA3 /* SectionProtocol.swift in Sources */,
 				025F5D1B2760C75800B2A3BC /* ExportJsonKeystorePasswordViewController.swift in Sources */,
 				02645124277217D9009260DC /* CustomRpcTableViewSection.swift in Sources */,
@@ -5602,6 +5714,7 @@
 				5E7C7FC76A025AD91D57B960 /* HistoriesViewModel.swift in Sources */,
 				5E7C7855E46A6604B2028C9D /* BrowserErrorView.swift in Sources */,
 				873784FC28DB1F8600CE836F /* SelectSwapToolViewController.swift in Sources */,
+				13D764742B64363E00A0CB4C /* AddTokenViewController.swift in Sources */,
 				874DED1524C1BAFF006C8FCE /* SelectTokenCoordinator.swift in Sources */,
 				87931AE1296C864C00887810 /* ImportMagicLinkController.swift in Sources */,
 				023286E2277D7960007D33C5 /* AddMultipleCustomRpcView.swift in Sources */,
@@ -5744,6 +5857,7 @@
 				87AB425D2767A2C00099DF9F /* TokenScriptCoordinator.swift in Sources */,
 				87C8018C24350174007648CF /* AddHideTokenSectionHeaderViewModel.swift in Sources */,
 				87713EB0264BAB2500B1B9CB /* TokenPagesContainerView.swift in Sources */,
+				13D7646D2B64363E00A0CB4C /* UIView + extension.swift in Sources */,
 				871CE2EB27DF810100B1E1CF /* EditableSlippageView.swift in Sources */,
 				025F5D1F2760C76A00B2A3BC /* ExportJsonKeystoreFileView.swift in Sources */,
 				879F185926E7412D000602F2 /* NFTAssetViewModel.swift in Sources */,
@@ -5797,6 +5911,7 @@
 				5E7C7F53A21D1D0FE576DD8F /* ElevateWalletSecurityViewController.swift in Sources */,
 				5E7C743467F5D428AF4E4F0F /* ElevateWalletSecurityViewModel.swift in Sources */,
 				5E7C7751F57FE1B8A563A79B /* WalletSecurityLevelIndicator.swift in Sources */,
+				13D764712B64363E00A0CB4C /* AddTokenNavigationBar.swift in Sources */,
 				87584FAE27EC64FA006A7CD1 /* SelfSizingPanelLayout.swift in Sources */,
 				5E7C70CF44075CF73F03AD4B /* TokensViewControllerTableViewHeader.swift in Sources */,
 				5E7C7233A9A5F9D1A89FF569 /* TokensViewControllerTableViewSectionHeader.swift in Sources */,
@@ -5814,6 +5929,7 @@
 				87D1757824ADAEEB002130D2 /* BlockchainTagLabel.swift in Sources */,
 				87BBF98D2563DD7600FF4846 /* WalletConnectSessionCoordinator.swift in Sources */,
 				87F15AF527F1EB2100EB9787 /* SwapStepsViewModel.swift in Sources */,
+				13D764702B64363E00A0CB4C /* AddTokenListView.swift in Sources */,
 				5E7C782069BAD4A667543979 /* SettingsViewController.swift in Sources */,
 				8737850E28DC91AA00CE836F /* SelectSwapRouteViewModel.swift in Sources */,
 				874ED68227D79793001AB374 /* SwapTokensCoordinator.swift in Sources */,
@@ -5831,6 +5947,7 @@
 				5E7C7D0A8197BF7725619D87 /* TransactionRowCellViewModel.swift in Sources */,
 				5E7C7BDE0060F5C350AFD34B /* ActivityViewController.swift in Sources */,
 				5E7C76194F5934264E5BABC8 /* ActivityViewModel.swift in Sources */,
+				13D7646F2B64363E00A0CB4C /* TokenListModel.swift in Sources */,
 				87F4D41A26C26C0700EFB9BC /* DropDownView.swift in Sources */,
 				5E7C72337A4230E78009B7E5 /* TransactionDetailsViewModel.swift in Sources */,
 				5E7C76DE2F995FE2ABEE74C0 /* ActivitiesViewController.swift in Sources */,
@@ -5900,6 +6017,7 @@
 				5E7C78772A59685C37CB99C2 /* ToolsViewController.swift in Sources */,
 				87931AD0296850E000887810 /* CAIP10AccountProvidable.swift in Sources */,
 				5E7C76AFBBACDD13BEF25DA9 /* ToolsViewModel.swift in Sources */,
+				13D7646C2B64363E00A0CB4C /* AddTokenViewModel.swift in Sources */,
 				5E7C78621C94C8AC509067AC /* ActiveWalletSessionView.swift in Sources */,
 				872A987328645F1D00196EA3 /* SendFungiblesTransactionViewModel.swift in Sources */,
 				5E7C7FA36B12D00E131398CF /* TokenScriptOverrides+Extensions.swift in Sources */,

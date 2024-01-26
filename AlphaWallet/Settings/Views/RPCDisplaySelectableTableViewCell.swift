@@ -7,22 +7,23 @@
 
 import UIKit
 import AlphaWalletFoundation
+import SDWebImage
 
 class RPCDisplaySelectableTableViewCell: UITableViewCell {
-
+    
     // MARK: - Properties
-
+    
     // MARK: Private
     private let chainIconView: ImageView = {
         let imageView = ImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFit
-
+        
         NSLayoutConstraint.activate([
             imageView.widthAnchor.constraint(equalToConstant: 40.0),
             imageView.heightAnchor.constraint(equalToConstant: 40.0),
         ])
-
+        
         return imageView
     }()
     private let accessoryImageView: UIImageView = {
@@ -50,29 +51,29 @@ class RPCDisplaySelectableTableViewCell: UITableViewCell {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = (Configuration.Color.Semantic.defaultViewBackground).withAlphaComponent(0.4)
         view.isHidden = false
-
+        
         return view
     }()
     // MARK: - Initializers
-
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         constructView()
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-
+    
     // MARK: - Configuration and Construction
-
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         chainIconView.image = nil
     }
-
+    
     // MARK: Public
-
+    
     func configure(viewModel: ServerImageTableViewCellViewModelType) {
         configureView(viewModel: viewModel)
         configureChainIconView(viewModel: viewModel)
@@ -82,59 +83,69 @@ class RPCDisplaySelectableTableViewCell: UITableViewCell {
         warningImageView.image = viewModel.warningImage
         warningImageView.isHidden = viewModel.warningImage == nil
     }
-
+    
     // MARK: Private
-
+    
     private func constructView() {
         addSubview(topSeparator)
         addSubview(chainIconView)
         addSubview(infoView)
         addSubview(unavailableToSelectView)
-
+        
         let accessoryStackView = [warningImageView, accessoryImageView].asStackView(axis: .horizontal, spacing: 10, alignment: .center)
         accessoryStackView.translatesAutoresizingMaskIntoConstraints = false
         addSubview(accessoryStackView)
-
+        
         NSLayoutConstraint.activate([
             topSeparator.topAnchor.constraint(equalTo: contentView.topAnchor),
             topSeparator.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
             topSeparator.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-
+            
             chainIconView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16.0),
             chainIconView.centerYAnchor.constraint(equalTo: centerYAnchor),
             chainIconView.topAnchor.constraint(greaterThanOrEqualToSystemSpacingBelow: topAnchor, multiplier: 1.0),
             chainIconView.bottomAnchor.constraint(lessThanOrEqualToSystemSpacingBelow: bottomAnchor, multiplier: 1.0),
-
+            
             infoView.leadingAnchor.constraint(equalTo: chainIconView.trailingAnchor, constant: 16.0),
             infoView.trailingAnchor.constraint(equalTo: accessoryStackView.leadingAnchor),
             infoView.centerYAnchor.constraint(equalTo: centerYAnchor),
             infoView.topAnchor.constraint(greaterThanOrEqualToSystemSpacingBelow: topAnchor, multiplier: 1.0),
             infoView.bottomAnchor.constraint(lessThanOrEqualToSystemSpacingBelow: bottomAnchor, multiplier: 1.0),
-
+            
             accessoryStackView.centerYAnchor.constraint(equalTo: centerYAnchor),
             accessoryStackView.topAnchor.constraint(greaterThanOrEqualToSystemSpacingBelow: topAnchor, multiplier: 1.0),
             accessoryStackView.bottomAnchor.constraint(lessThanOrEqualToSystemSpacingBelow: bottomAnchor, multiplier: 1.0),
             accessoryStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20.0),
-
+            
             unavailableToSelectView.anchorsConstraint(to: self)
         ])
     }
-
+    
     private func configureView(viewModel: ServerImageTableViewCellViewModelType) {
         selectionStyle = viewModel.selectionStyle
         backgroundColor = viewModel.backgroundColor
         topSeparator.isHidden = viewModel.isTopSeparatorHidden
     }
-
+    
     private func configureChainIconView(viewModel: ServerImageTableViewCellViewModelType) {
         switch viewModel.server {
         case .auto:
             chainIconView.image = R.image.launch_icon()!
         case .server(let server):
-            chainIconView.set(imageSource: server.walletConnectIconImage)
+            decideChainImageViewIcon(server: server)
         }
     }
-
+    
+    private func decideChainImageViewIcon(server: RPCServer) {
+        if let url = URL(string: "https://assets.lif3.com/wallet/chains/\(server.chainID)-I.svg") {
+            chainIconView.sd_setImage(with: url, placeholderImage: server.iconImage)
+        } else if let url = URL(string: "https://assets.lif3.com/wallet/chains/\(server.chainID).svg") {
+            chainIconView.sd_setImage(with: url, placeholderImage: server.iconImage)
+        } else {
+           chainIconView.set(imageSource: server.walletConnectIconImage)
+        }
+    }
+    
     private func configureInfoView(viewModel: ServerImageTableViewCellViewModelType) {
         infoView.configure(viewModel: viewModel)
     }
@@ -143,29 +154,29 @@ class RPCDisplaySelectableTableViewCell: UITableViewCell {
 // MARK: - private class
 
 private class ServerInformationView: UIView {
-
+    
     // MARK: - Properties
-
+    
     // MARK: Private
     private let primaryTextLabel: UILabel = UILabel()
     private let secondaryTextLabel: UILabel = UILabel()
-
+    
     // MARK: - Initializers
-
+    
     init() {
         super.init(frame: .zero)
         translatesAutoresizingMaskIntoConstraints = false
         constructView()
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         return nil
     }
-
+    
     // MARK: - Configuration and Construction
-
+    
     // MARK: Public
-
+    
     func configure(viewModel: ServerImageTableViewCellViewModelType) {
         primaryTextLabel.font = viewModel.primaryFont
         primaryTextLabel.text = viewModel.primaryText
@@ -174,7 +185,7 @@ private class ServerInformationView: UIView {
         secondaryTextLabel.text = viewModel.secondaryText
         secondaryTextLabel.textColor = viewModel.secondaryFontColor
     }
-
+    
     // MARK: Private
     
     private func constructView() {

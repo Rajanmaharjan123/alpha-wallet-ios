@@ -16,6 +16,7 @@ protocol FungibleTokenDetailsViewControllerDelegate: AnyObject, CanOpenURL {
     func didTapSend(for token: Token, in viewController: FungibleTokenDetailsViewController)
     func didTapReceive(for token: Token, in viewController: FungibleTokenDetailsViewController)
     func didTap(action: TokenInstanceAction, token: Token, in viewController: FungibleTokenDetailsViewController)
+    func didTapDotButton(for token: Token, in viewController: FungibleTokenDetailsViewController)
 }
 
 class FungibleTokenDetailsViewController: UIViewController {
@@ -31,6 +32,22 @@ class FungibleTokenDetailsViewController: UIViewController {
         let chartView = TokenHistoryChartView(viewModel: viewModel.chartViewModel)
         return chartView
     }()
+    
+    lazy var buttonWrapperView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .red
+        return view
+    }()
+    
+    lazy var dotButton: UIButton = {
+        let button = UIButton()
+        button.layer.cornerRadius = 30
+        button.backgroundColor = .white
+        button.setImage(UIImage(named: "toolbar-menu")?.withRenderingMode(.alwaysTemplate), for: .normal)
+        button.tintColor = .black
+        button.addTopShadow(color: UIColor.gray, radius: 2, opacity: 2, shadowHeight: 2)
+        return button
+    }()
 
     private let viewModel: FungibleTokenDetailsViewModel
     private var cancelable = Set<AnyCancellable>()
@@ -38,14 +55,15 @@ class FungibleTokenDetailsViewController: UIViewController {
     private let action = PassthroughSubject<TokenInstanceAction, Never>()
 
     weak var delegate: FungibleTokenDetailsViewControllerDelegate?
+    
+    var buttonTapped: (() -> Void)?
 
     init(viewModel: FungibleTokenDetailsViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
 
         let footerBar = ButtonsBarBackgroundView(buttonsBar: buttonsBar)
-        view.addSubview(footerBar)
-        view.addSubview(containerView)
+        [containerView, footerBar, dotButton].forEach { view.addSubview($0) }
 
         NSLayoutConstraint.activate([
             containerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -55,8 +73,9 @@ class FungibleTokenDetailsViewController: UIViewController {
 
             footerBar.anchorsConstraint(to: view)
         ])
-
+        dotButton.anchor(top: nil, leading: nil, bottom: footerBar.topAnchor, trailing: view.trailingAnchor, padding: .init(top: 0, left: 0, bottom: 10, right: 20), size: .init(width: 60, height: 60))
         buttonsBar.viewController = self
+        dotButton.addTarget(self, action: #selector(dotButtonAction), for: .touchUpInside)
     }
 
     override func viewDidLoad() {
@@ -65,12 +84,29 @@ class FungibleTokenDetailsViewController: UIViewController {
         view.backgroundColor = Configuration.Color.Semantic.defaultViewBackground
 
         bind(viewModel: viewModel)
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         willAppear.send(())
     }
+    
+    @objc func dotButtonAction() {
+        showActionSheet()
+    }
+    
+    func showActionSheet() {
+            let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+            let option1Action = UIAlertAction(title: "Tokens", style: .default) { _ in
+                self.delegate?.didTapDotButton(for: Token(), in: self)
+            }
+            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { _ in
+            }
+            actionSheet.addAction(option1Action)
+            actionSheet.addAction(cancelAction)
+        self.present(actionSheet, animated: true, completion: nil)
+        }
 
     private func buildSubviews(for viewTypes: [FungibleTokenDetailsViewModel.ViewType]) -> [UIView] {
         var subviews: [UIView] = []

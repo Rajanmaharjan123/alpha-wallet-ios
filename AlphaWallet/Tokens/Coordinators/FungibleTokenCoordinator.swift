@@ -130,7 +130,6 @@ class FungibleTokenCoordinator: Coordinator {
 
         let viewController = FungibleTokenDetailsViewController(viewModel: viewModel)
         viewController.delegate = delegate
-
         return viewController
     }
 
@@ -173,6 +172,13 @@ extension FungibleTokenCoordinator: FungibleTokenDetailsViewControllerDelegate {
 
         let tokenHolder = session.tokenAdaptor.getTokenHolder(token: token)
         delegate?.didPress(for: .send(type: .tokenScript(action: action, token: token, tokenHolder: tokenHolder)), viewController: navigationController, in: self)
+    }
+    
+    func didTapDotButton(for token: Token, in viewController: FungibleTokenDetailsViewController) {
+        let coordinator = AddTokenViewCoordinator(navigationController: navigationController)
+        coordinator.delegate = self
+        addCoordinator(coordinator)
+        coordinator.start()
     }
 
     func didPressViewContractWebPage(forContract contract: AlphaWallet.Address, server: RPCServer, in viewController: UIViewController) {
@@ -246,5 +252,11 @@ extension FungibleTokenCoordinator: FungibleTokenTabViewControllerDelegate {
 
     func open(url: URL) {
         delegate?.didPressOpenWebPage(url, in: rootViewController!)
+    }
+}
+
+extension FungibleTokenCoordinator: AddTokenViewCoordinatorDelegate {
+    func didDismiss(in coordinator: AddTokenViewCoordinator) {
+        delegate?.didClose(in: self)
     }
 }

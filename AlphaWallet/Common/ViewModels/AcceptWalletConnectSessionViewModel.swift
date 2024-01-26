@@ -211,4 +211,8 @@ extension RPCServer {
     var walletConnectIconImage: ImagePublisher {
         return RPCServerImageFetcher.instance.image(server: self, iconImage: iconImage ?? R.image.tokenPlaceholderLarge()!)
     }
+    
+    func decideIconImage() -> UIImage {
+        return UIImage()
+    }
 }

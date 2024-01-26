@@ -25,7 +25,6 @@ class AddHideTokensCoordinator: Coordinator {
         viewController.delegate = self
         viewController.navigationItem.largeTitleDisplayMode = .never
         viewController.navigationItem.rightBarButtonItem = UIBarButtonItem.addButton(self, selector: #selector(addTokenButtonSelected))
-
         return viewController
     }()
     private let serversProvider: ServersProvidable

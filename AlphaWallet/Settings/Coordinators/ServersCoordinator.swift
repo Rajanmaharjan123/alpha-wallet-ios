@@ -11,7 +11,34 @@ protocol ServersCoordinatorDelegate: AnyObject {
 class ServersCoordinator: Coordinator {
     //Cannot be `let` as the chains can change dynamically without the app being restarted (i.e. killed). The UI can be restarted though (when switching changes)
     static var serversOrdered: [RPCServer] {
-        return RPCServer.availableServers.sorted()
+        let rpcServers = sortRPCServersByName(RPCServer.availableServers)
+        return rpcServers
+    }
+    
+    static func sortRPCServersByName(_ servers: [RPCServer]) -> [RPCServer] {
+        let priorityOrder = ["Fantom Opera", "Binance", "Polygon Mainnet"]
+        let missingNames = priorityOrder.filter { name in
+            !servers.contains { $0.displayName.contains(name) }
+        }
+        if !missingNames.isEmpty {
+            print("Missing servers for names: \(missingNames)")
+        }
+        let priorityServers = servers.filter { server in
+            priorityOrder.contains { server.displayName.contains($0) }
+        }
+        let remainingServers = servers.filter { server in
+            !priorityOrder.contains { server.displayName.contains($0) }
+        }
+        let sortedServers = priorityServers.sorted { (server1, server2) -> Bool in
+            guard let index1 = priorityOrder.firstIndex(where: { server1.displayName.contains($0) }),
+                  let index2 = priorityOrder.firstIndex(where: { server2.displayName.contains($0) }) else {
+                return false
+            }
+            return index1 < index2
+        }
+        let finalSortedServers = sortedServers + remainingServers
+        print("\(finalSortedServers.map {$0.displayName})")
+        return finalSortedServers
     }
 
     let viewModel: ServersViewModel
